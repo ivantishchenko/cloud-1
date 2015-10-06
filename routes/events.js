@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/create', function(req, res, next) {
-  res.render('events/create', { title: 'Event creation' });
+  res.render('events', { title: 'Event creation' });
 });
 
 module.exports = router;
