@@ -1,6 +1,6 @@
 // create an object config
 var config = {};
-// sed URI field for mongo
-config.mongoUri = 'mongodb://130.233.42.189:27017/cal';
+// sed URI field for mongo I HAVE TO CONFIGURE FOR EACH HOST
+config.mongoUri = 'mongodb://localhost:27017/calendar';
 // for exports
 module.exports = config;

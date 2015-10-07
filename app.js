@@ -11,7 +11,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var events = require('./routes/events');
 
-//mongoose.connect(config.mongoUri);
+mongoose.connect(config.mongoUri);
 
 var app = express();
 
