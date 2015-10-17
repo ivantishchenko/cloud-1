@@ -1,3 +1,4 @@
+// Confige file
 // create an object config
 var config = {};
 // sed URI field for mongo I HAVE TO CONFIGURE FOR EACH HOST
