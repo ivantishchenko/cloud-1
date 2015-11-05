@@ -10,9 +10,11 @@ $(function() {
                 '<th>' + item.priority + '</th>' +
                 '<th>' + item.with + '</th>' +
                 '</tr>');
+
             node.click(function() {
-                alert( "H." );
+                alert(item._id);
             });
+
             $events.append(node);
         });
     });
