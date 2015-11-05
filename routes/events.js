@@ -3,9 +3,10 @@ var router = express.Router();
 var eventService = require('../services/event-service');
 
 // GET /create VIEW
+/*
 router.get('/create', function(req, res, next) {
   res.render('events/create');
-});
+});*/
 
 // SEARCHING based on place
 router.get('/search', function(req, res, next) {
