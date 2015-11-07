@@ -11,10 +11,10 @@ exports.addEvent = function(event, next) {
   // inserting into MONGO with a callback
   newEvent.save(function(err) {
     if (err) {
-      return next(err);
+      return next(null, err);
     }
     // no error
-    next(null);
+    next(newEvent, null);
   });
 };
 

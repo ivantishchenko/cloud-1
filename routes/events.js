@@ -71,23 +71,20 @@ router.delete('/', function(req, res, next) {
       var vm = { error: 'Error deleting the records' };
       return res.render('events/', vm);
     }
-    res.send({msg: 'All events deleted'});
+    res.send({msg: "hi"});
   });
 });
 
 // Submission route POST
 router.post('/create', function(req, res, next) {
   // grabing the contenct from the POST req
-  eventService.addEvent(req.body, function(err){
+  eventService.addEvent(req.body, function(event, err){
     //console.log(req.body);
     if (err) {
-      var vm = {
-        input: req.body,
-        error: 'Something went wrong creating an event'
-      };
-      return res.render('events/create', vm);
+      return res.send(null);
     }
-    res.redirect('/events');
+    //console.log(event);
+    res.send(event);
   });
 });
 

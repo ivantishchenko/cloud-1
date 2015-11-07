@@ -36,28 +36,29 @@
                             <h1>My events:</h1>
                             <div id="page-content" class="panel widget panel-first-child panel-last-child">
                                 <div class="table-responsive">
-                                    <table id="events" class="table-hover">
+                                    <table class="table-hover">
                                         <thread>
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Name</th>
                                             </tr>
                                         </thread>
-                                        <tbody>
+                                        <tbody id="events">
                                         </tbody>
                                     </table>
                                 </div>
+                                <button id="delete-all" type="button">Delete all</button>
                             </div>
 
                             <h1>Add an event:</h1>
-                            <form role="form" class="form" method = post>
+                            <form id="myForm" class="form">
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input type="text" id="name" name="name" required="true"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Place</label>
-                                    <input type="text" id="place" name="place"/>
+                                    <input type="text" id="place" required name="place"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Priority</label>
@@ -68,7 +69,7 @@
                                     <input type="text" id="with" name="with"/>
                                 </div>
                                 <div class="form-submit">
-                                    <input id="add-event" type="submit" value="Create my event" />
+                                    <input id="add" type="submit" class="btn btn-default" value="Submit">
                                 </div>
                             </form>
 
