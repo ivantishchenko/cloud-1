@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var eventService = require('../services/event-service');
-
+var googleService = require('../google/connect');
 // GET /create VIEW
 /*
 router.get('/create', function(req, res, next) {
@@ -27,8 +27,24 @@ router.get('/', function(req, res, next) {
       vm = { error: 'Something went wrong selecting events'};
       return res.render('events/', vm);
     }
-    //res.render({vm: vm});
-    res.send(vm);
+
+
+
+    googleService.listAll(function(data) {
+      //console.log(data);
+      for ( var i = 0; i < data.length; i++ ) {
+        var obj = {
+          name: data[i].summary,
+          place: data[i].location,
+          priority: data[i].description
+        };
+        vm.push(obj);
+      }
+      res.send(vm);
+      //console.log(vm);
+    });
+   // res.send(vm);
+    
   });
 });
 
@@ -84,6 +100,7 @@ router.post('/create', function(req, res, next) {
       return res.send(null);
     }
     //console.log(event);
+    googleService.addGoogle(event);
     res.send(event);
   });
 });
