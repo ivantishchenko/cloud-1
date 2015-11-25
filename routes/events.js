@@ -24,14 +24,11 @@ router.get('/search', function(req, res, next) {
 router.get('/', function(req, res, next) {
   eventService.showEvents(function(err, vm) {
     if (err) {
-      vm = { error: 'Something went wrong selecting events'};
-      return res.render('events/', vm);
+      vm = {};
+      return res.send(vm);
     }
 
-
-
     googleService.listAll(function(data) {
-      //console.log(data);
       for ( var i = 0; i < data.length; i++ ) {
         var obj = {
           name: data[i].summary,
@@ -41,9 +38,8 @@ router.get('/', function(req, res, next) {
         vm.push(obj);
       }
       res.send(vm);
-      //console.log(vm);
+
     });
-   // res.send(vm);
     
   });
 });

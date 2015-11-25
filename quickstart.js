@@ -10,7 +10,7 @@ var TOKEN_PATH = TOKEN_DIR + 'calendar-nodejs-quickstart.json';
 var calendar = google.calendar('v3');
 
 // Load client secrets from a local file.
-fs.readFile('../client_secret.json', function processClientSecrets(err, content) {
+fs.readFile('client_secret.json', function processClientSecrets(err, content) {
     //console.log(TOKEN_PATH);
     if (err) {
         console.log('Error loading client secret file: ' + err);
@@ -18,7 +18,7 @@ fs.readFile('../client_secret.json', function processClientSecrets(err, content)
     }
     // Authorize a client with the loaded credentials, then call the
     // Google Calendar API.
-    authorize(JSON.parse(content), addEvent);
+    authorize(JSON.parse(content), listEvents);
 });
 
 /**

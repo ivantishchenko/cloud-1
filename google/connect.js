@@ -196,6 +196,7 @@ function listEvents(auth, callback) {
         var events = response.items;
         if (events.length == 0) {
             console.log('No upcoming events found.');
+            callback(events);
         } else {
             console.log('Upcoming events:');
             for (var i = 0; i < events.length; i++) {
@@ -232,7 +233,7 @@ function addEvent(auth, data) {
     calendar.events.insert({
         auth: auth,
         calendarId: 'primary',
-        resource: event,
+        resource: event
     }, function(err, event) {
         if (err) {
             console.log('There was an error contacting the Calendar service: ' + err);
