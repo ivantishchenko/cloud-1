@@ -14,7 +14,7 @@
     "googleapis": "^59.0.0",
     "hbs": "~3.1.0",
     "mongoose": "^4.1.10",
-    "morgan": "~1.6.1",
+    "morgan": "~1.10.0",
     "node-static": "^0.7.7",
     "serve-favicon": "~2.3.0"
   }
